@@ -1,6 +1,6 @@
 const express = require("express");
 var pg = require("pg");
-const PORT =3002
+const port= process.env.PORT || 3004;
 const app = express();
 
 const pool = new pg.Pool({
@@ -74,6 +74,6 @@ app
       res.json({ success: true, result });
     })
 
-app.listen(PORT, () => 
-console.log(`serve up and running at http://localhost${PORT}` )
+app.listen(port, () => 
+console.log(`serve up and running at http://localhost:${port}` )
 );
